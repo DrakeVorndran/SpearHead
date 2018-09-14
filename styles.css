@@ -25,7 +25,6 @@ h1 {
 .sceneContainer {
     width: 75%;
     height: 100%;
-    background-color: blue;
     display: block;
 }
 
@@ -33,8 +32,9 @@ h1 {
 .statBar {
     width: 15%;
     height: 100%;
-    background-color: green;
     display: block;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
 }
 
 /* setting the header to the center */
@@ -49,8 +49,9 @@ h1 {
     align-items: center;
     width: 15%;
     height: 100%;
-    background-color: red;
     overflow: auto;
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
 }
 
 /* set a box for items in the inventory */
@@ -63,11 +64,30 @@ h1 {
     display: block;
 }
 
+.item >h1 {
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.item > ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    list-style: none;
+    margin-left: -25px;
+    line-height: 2.2em;
+}
+
+.item > li {
+    font-size: .8em;
+}
+
 /* creates the action bar at the bottom of the page */
 .actions {
     width: 100%;
     height: 25%;
-    background-color: purple;
     display: block;
     margin: 0;
+    border-top: 1px solid black;
 }
