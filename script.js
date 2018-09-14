@@ -1,7 +1,7 @@
 var weaponList = []
 
 
-class player{
+class Player{
 
     constructor(name,weapon){
         this.name = name;
@@ -15,10 +15,15 @@ class player{
     }
 
     addWeapon(weapon){
-        this.weapons.push(weapon)
+        this.weapons.push(weapon);
     }
 }
 
+
+// class Enemy{
+//
+//
+// }
 
 class Weapon{
 
@@ -30,6 +35,15 @@ class Weapon{
 
     }
 
+}
+
+function createOptions(options){
+    var actions = document.getElementById('actions');
+    actions.innerHTML = "";
+    for(var i = 0; i<options.length; i++){
+        actions.innerHTML = actions.innerHTML+"<p>"+options[i]+"</p>";
+        console.log(actions.innerHTML+"<p>"+options[i]+"</p>");
+     }
 }
 
 // function createWeapon(name, strength, level, type){
@@ -67,3 +81,10 @@ addWeapons();
 for(var i = 0; i<weaponList.length; i++){
     console.log(weaponList[i].name);
 }
+
+
+player = new Player("billy",weaponList[0]);
+console.log(player.mainWeapon.name);
+
+
+createOptions(["pickles","brian"]);
