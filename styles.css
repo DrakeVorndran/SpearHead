@@ -22,14 +22,14 @@ h1 {
 }
 
 /* sets main scene */
-.sceneContainer {
+#sceneContainer {
     width: 75%;
     height: 100%;
     display: block;
 }
 
 /* sets the stats container on the left */
-.statBar {
+#statBar {
     width: 15%;
     height: 100%;
     display: block;
@@ -43,7 +43,7 @@ h1 {
 }
 
 /* sets the inv to the right side of the screen */
-.inv {
+#inv {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -84,7 +84,7 @@ h1 {
 }
 
 /* creates the action bar at the bottom of the page */
-.actions {
+#actions {
     width: 100%;
     height: 25%;
     display: block;
