@@ -1,3 +1,6 @@
+var weaponList = []
+
+
 class player{
 
     constructor(name,weapon){
@@ -29,14 +32,38 @@ class Weapon{
 
 }
 
-function createWeapon(name, strength, level, type){
-    var txtFile = "Weapons/"+name+".txt";
-    console.log(txtFile)
-    weapon = new Weapon(name, strength, level, type);
-    var file = new File(txtFile);
-    file.open("w");
-    file.writeln(weapon)
-    file.close();
+// function createWeapon(name, strength, level, type){
+//     var txtFile = "Weapons/"+name+".txt";
+//     console.log(txtFile)
+//     weapon = new Weapon(name, strength, level, type);
+//     var file = new File(txtFile);
+//     file.open("w");
+//     file.writeln(weapon)
+//     file.close();
+// }
+
+function addWeapons(){
+    var l = [{
+
+        "name": "sword",
+        "strength": 40,
+        "level": 1,
+        "type": "stabby",
+    },
+    {
+
+        "name": "hammer",
+        "strength": 30,
+        "level": 2,
+        "type": "blunt",
+    }];
+
+    for(var i = 0; i<l.length; i++){
+        weaponList.push(new Weapon(l[i].name,l[i].strength,l[i].level,l[i].type));
+    }
 }
 
-// createWeapon(prompt("name"),prompt("strength"),prompt("level"),prompt("type"))
+addWeapons();
+for(var i = 0; i<weaponList.length; i++){
+    console.log(weaponList[i].name);
+}
