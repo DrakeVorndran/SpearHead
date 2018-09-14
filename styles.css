@@ -2,12 +2,44 @@
 body, html {
     height: 100%;
     width: 100%;
+    margin: 0;
 }
 
+/*  */
+.container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 75%;
+    margin: 0;
+}
+
+/* sets main scene */
 .sceneContainer {
-    height: 70%;
-    width: 95%;
+    width: 75%;
+    height: 100%;
     background-color: black;
     display: block;
-    align-self: center;
+}
+
+.statBar {
+    width: 15%;
+    height: 100%;
+    background-color: green;
+    display: block;
+}
+
+.inv {
+    width: 15%;
+    height: 100%;
+    background-color: red;
+    display: block;
+}
+
+.actions {
+    width: 100%;
+    height: 25%;
+    background-color: purple;
+    display: block;
+    margin: 0;
 }
