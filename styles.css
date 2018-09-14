@@ -5,7 +5,7 @@ body, html {
     margin: 0;
 }
 
-/*  */
+/* flexboxes the stats, scene, and inv */
 .container {
     display: flex;
     flex-direction: row;
@@ -22,6 +22,7 @@ body, html {
     display: block;
 }
 
+/* sets the stats container on the left */
 .statBar {
     width: 15%;
     height: 100%;
@@ -29,13 +30,20 @@ body, html {
     display: block;
 }
 
+/* setting the header to the center */
+.statBar > h1 {
+    text-align: center;
+}
+
+/* sets the inv to the right side of the screen */
 .inv {
+    display: flex;
     width: 15%;
     height: 100%;
     background-color: red;
-    display: block;
 }
 
+/* creates the action bar at the bottom of the page */
 .actions {
     width: 100%;
     height: 25%;
