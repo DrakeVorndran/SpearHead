@@ -57,7 +57,7 @@ function createOptions(options){
 // }
 
 function doshit(name){
-    console.log("Shit has been done by "+name);
+    document.getElementById("sceneContainer").style.background = name;
 }
 
 function addWeapons(){
@@ -91,4 +91,4 @@ player = new Player("billy",weaponList[0]);
 console.log(player.mainWeapon.name);
 
 
-createOptions(["button1","button2","button3","button4"]);
+createOptions(["red","blue","green","yellow"]);
