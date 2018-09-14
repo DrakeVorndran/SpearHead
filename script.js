@@ -41,8 +41,8 @@ function createOptions(options){
     var actions = document.getElementById('actions');
     actions.innerHTML = "";
     for(var i = 0; i<options.length; i++){
-        actions.innerHTML = actions.innerHTML+"<p>"+options[i]+"</p>";
-        console.log(actions.innerHTML+"<p>"+options[i]+"</p>");
+        actions.innerHTML = actions.innerHTML+"<button onclick='doshit(\""+options[i]+"\")'>"+options[i]+"</button>";
+        // console.log("<button onclick='doshit('"+options[i]+"')'>"+options[i]+"</button>");
      }
 }
 
@@ -55,6 +55,10 @@ function createOptions(options){
 //     file.writeln(weapon)
 //     file.close();
 // }
+
+function doshit(name){
+    console.log("Shit has been done by "+name);
+}
 
 function addWeapons(){
     var l = [{
@@ -87,4 +91,4 @@ player = new Player("billy",weaponList[0]);
 console.log(player.mainWeapon.name);
 
 
-createOptions(["pickles","brian"]);
+createOptions(["button1","button2","button3","button4"]);
