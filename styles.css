@@ -7,6 +7,7 @@ body, html {
 
 body {
     font-size: 18px;
+    font-family: serif;
 }
 
 h1 {
@@ -21,25 +22,22 @@ h1 {
     margin: 0;
 }
 
+/* sets the stats container on the left */
+#statBar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 15%;
+    height: 100%;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+}
+
 /* sets main scene */
 #sceneContainer {
     width: 75%;
     height: 100%;
     display: block;
-}
-
-/* sets the stats container on the left */
-#statBar {
-    width: 15%;
-    height: 100%;
-    display: block;
-    border-bottom: 1px solid black;
-    border-right: 1px solid black;
-}
-
-/* setting the header to the center */
-.statBar > h1 {
-    text-align: center;
 }
 
 /* sets the inv to the right side of the screen */
@@ -54,6 +52,15 @@ h1 {
     border-left: 1px solid black;
 }
 
+/* creates the action bar at the bottom of the page */
+#actions {
+    width: 100%;
+    height: 25%;
+    display: block;
+    margin: 0;
+    border-top: 1px solid black;
+}
+
 /* set a box for items in the inventory */
 .item {
     width: 90%;
@@ -64,30 +71,27 @@ h1 {
     display: block;
 }
 
+/* sets proper alignment and size for name */
 .item >h1 {
     font-size: 1.2em;
     text-align: center;
 }
 
+/* stores item data */
 .item > ul {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
     list-style: none;
     margin-left: -25px;
     line-height: 2.2em;
 }
 
+/* setting description size */
 .item > li {
     font-size: .8em;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
 }
 
-/* creates the action bar at the bottom of the page */
-#actions {
-    width: 100%;
-    height: 25%;
-    display: block;
-    margin: 0;
-    border-top: 1px solid black;
+/*  */
+.item > li > span {
 }
