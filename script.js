@@ -39,4 +39,4 @@ function createWeapon(name, strength, level, type){
     file.close();
 }
 
-createWeapon(prompt("name"),prompt("strength"),prompt("level"),prompt("type"))
+// createWeapon(prompt("name"),prompt("strength"),prompt("level"),prompt("type"))
