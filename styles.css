@@ -5,6 +5,13 @@ body, html {
     margin: 0;
 }
 
+body {
+    font-size: 18px;
+}
+
+h1 {
+    font-size: 2em;
+}
 /* flexboxes the stats, scene, and inv */
 .container {
     display: flex;
@@ -18,7 +25,7 @@ body, html {
 .sceneContainer {
     width: 75%;
     height: 100%;
-    background-color: black;
+    background-color: blue;
     display: block;
 }
 
@@ -38,9 +45,22 @@ body, html {
 /* sets the inv to the right side of the screen */
 .inv {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 15%;
     height: 100%;
     background-color: red;
+    overflow: auto;
+}
+
+/* set a box for items in the inventory */
+.item {
+    width: 90%;
+    min-height: 215px;
+    border: .5px solid black;
+    border-radius: 10px;
+    margin: 15px;
+    display: block;
 }
 
 /* creates the action bar at the bottom of the page */
