@@ -85,21 +85,19 @@ h1 {
 /* stores item data */
 .item > ul {
     list-style: none;
-    margin-left: -25px;
-    line-height: 2.2em;
+    margin-left: -10%;
+    margin-right: 10%;
 }
 
 /* setting description size */
-.item > li {
-    display: block;
-    width: 100%
-    font-size: .8em;
+.item > ul > li {
+    display: flex;
+    width: 95%;
+    line-height: 1em;
+    font-size: 1em;
     justify-content: space-between;
-}
-
-/*  */
-.item > li > span {
-
+    margin-right: 2%;
+    margin-bottom: 12px;
 }
 
 /* button styling for action panel */
