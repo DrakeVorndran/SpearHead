@@ -25,10 +25,18 @@ class Player{
 }
 
 
-// class Enemy{
-//
-//
-// }
+class Enemy{
+    constructor(name, weapon, secondary, level){
+        this.name = name;
+        this.weapon = weapon;
+        this.secondary = secondary;
+        this.level = level;
+        this.health = randint(30,100)*this.level;
+        this.speed = randint(10,20)/this.level;
+    }
+
+
+}
 
 class Weapon{
 
@@ -41,6 +49,10 @@ class Weapon{
 
     }
 
+}
+
+function randint(min,max){
+    return Math.floor(min+(Math.random()*(max-min)))
 }
 
 function createOptions(options){
@@ -125,6 +137,43 @@ function updateInv(player){
     }
 }
 
+
+
+function genWeapon(name,level){
+    types = ["Slicy","Smashy","Stabby","Blocky"];
+    return new Weapon(name, randint(10,30), randint(3,10), level, types[randint(0,types.length)]);
+}
+
+
+function genEnemy(player){
+    enemyMain = genWeapon("main",player.level+randint(-1,2));
+    enemySecond = genWeapon("second",player.level+randint(-1,2));
+    enemy = new Enemy("john",enemyMain,enemySecond,player.level+randint(-1,2));
+    return enemy;
+}
+
+function battle(player){
+    enemy = genEnemy(player);
+    container = document.getElementById("imgContainer");
+    container.innerHTML = "<h1>"+enemy.name+"</h1>"
+    container.innerHTML += "<h2><strong>Level: </strong>"+enemy.level+"</h2>"
+    container.innerHTML += `<div style='border: 1px black solid; width: 200px; border-radius:20px; text-align:center;'>
+    <h2>`+enemy.weapon.name+`</h2>
+    <p><strong>Strength:</strong> `+enemy.weapon.strength+`</p>
+    <p><strong>Speed:</strong> `+enemy.weapon.speed+`</p>
+    <p><strong>Level:</strong> `+enemy.weapon.level+`</p>
+    <p><strong>Type:</strong> `+enemy.weapon.type+`</p>
+    `;
+
+    container.innerHTML += `<div style='border: 1px black solid; width: 200px; border-radius:20px; text-align:center;'>
+    <h2>`+enemy.secondary.name+`</h2>
+    <p><strong>Strength:</strong> `+enemy.secondary.strength+`</p>
+    <p><strong>Speed:</strong> `+enemy.secondary.speed+`</p>
+    <p><strong>Level:</strong> `+enemy.secondary.level+`</p>
+    <p><strong>Type:</strong> `+enemy.secondary.type+`</p>
+    `
+
+}
 addWeapons();
 
 
@@ -135,6 +184,7 @@ player = new Player("billy",weaponList[0]);
 player.addWeapon(weaponList[2]);
 
 updateInv(player);
+// battle(player);
 
 
 createOptions(["red","blue","green","yellow"]);
