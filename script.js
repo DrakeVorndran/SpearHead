@@ -69,35 +69,35 @@ function doshit(name){
 function addWeapons(){
     var l = [{
 
-        "name": "sword",
+        "name": "Sword",
         "strength": 40,
         "speed": 10,
         "level": 1,
-        "type": "slicy",
+        "type": "Slicy",
     },
     {
 
-        "name": "hammer",
+        "name": "Hammer",
         "strength": 30,
         "speed": 20,
         "level": 1,
-        "type": "smashy",
+        "type": "Smashy",
     },
     {
 
-        "name": "dagger",
+        "name": "Dagger",
         "strength": 30,
         "speed": 3,
         "level": 1,
-        "type": "stabby",
+        "type": "Stabby",
     },
     {
 
-        "name": "sheild",
+        "name": "Sheild",
         "strength": 30,
         "speed": 10,
         "level": 1,
-        "type": "blocky",
+        "type": "Blocky",
     }];
 
     for(var i = 0; i<l.length; i++){
@@ -106,7 +106,24 @@ function addWeapons(){
 }
 
 
-
+function updateInv(player){
+    inv = document.getElementById("inv");
+    items = player.weapons;
+    inv.innerHTML = "<h1>Inventory</h1>";
+    for(var i = 0; i<items.length; i++){
+        inv.innerHTML+=`
+        <div class="item">
+            <h1>`+ items[i].name + `</h1>
+            <ul>
+                <li><strong>Strength:</strong><span>` + items[i].strength + `</span></li>
+                <li><strong>Speed:</strong><span>` + items[i].speed + `</span></li>
+                <li><strong>Level:</strong><span>` + items[i].level + `</span></li>
+                <li><strong>Type:</strong><span>` + items[i].type + `</span></li>
+            </ul>
+        </div>
+        `;
+    }
+}
 
 addWeapons();
 
@@ -117,7 +134,7 @@ player = new Player("billy",weaponList[0]);
 
 player.addWeapon(weaponList[2]);
 
-console.log(player.secondary.name);
+updateInv(player);
 
 
 createOptions(["red","blue","green","yellow"]);
