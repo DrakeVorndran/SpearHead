@@ -28,19 +28,32 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: space-between;
     width: 15%;
     height: 100%;
     border-bottom: 1px solid black;
     border-right: 1px solid black;
-    margin-left: 10px;
+    margin-left: 1%;
 }
 
-/* sets main scene */
+/* sets main scene and image */
 #sceneContainer {
     width: 75%;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-image: url();
+    background-size: 100% 100%;
+}
+
+/* sets textbox */
+#textContainer{
+    width: 95%;
+    height: 35%;
     display: block;
+    /* placeholder textbox */
+    background-image:url(./assets/textbackground.png);
+    background-size: 100% 100%;
+    padding-left: 5%
 }
 
 /* sets the inv to the right side of the screen */
@@ -69,7 +82,7 @@ h1 {
 /* set a box for items in the inventory */
 .item {
     width: 90%;
-    min-height: 215px;
+    min-height: 200px;
     border: .5px solid black;
     border-radius: 10px;
     margin: 15px;
@@ -110,4 +123,20 @@ h1 {
 
 button:hover {
     cursor: pointer;
+}
+
+/* centering character panel title */
+#statBar > h1 {
+    display: flex;
+    align-self: center;
+}
+
+/* setting the health bar */
+#healthBar {
+    display: flex;
+    flex-direction: column;
+    background-color: red;
+    border-radius: 10px;
+    width: 15%;
+    height: 45%;
 }
