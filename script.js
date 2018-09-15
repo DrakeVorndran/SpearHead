@@ -9,13 +9,18 @@ class Player{
         this.weapons = [];
         this.maxHealth = 100;
         this.health = 100;
+        this.speed = 10;
         this.level = 1;
         this.mainWeapon = weapon;
+        this.secondary = null;
         this.weapons.push(this.mainWeapon);
     }
 
     addWeapon(weapon){
         this.weapons.push(weapon);
+        if(this.weapons.length==2){
+            this.secondary = this.weapons[1];
+        }
     }
 }
 
@@ -27,9 +32,10 @@ class Player{
 
 class Weapon{
 
-    constructor(name, strength, level, type){
+    constructor(name, strength, speed, level, type){
         this.name = name;
         this.strength = strength;
+        this.speed = speed;
         this.level = level;
         this.type = type;
 
@@ -65,30 +71,53 @@ function addWeapons(){
 
         "name": "sword",
         "strength": 40,
+        "speed": 10,
         "level": 1,
-        "type": "stabby",
+        "type": "slicy",
     },
     {
 
         "name": "hammer",
         "strength": 30,
-        "level": 2,
-        "type": "blunt",
+        "speed": 20,
+        "level": 1,
+        "type": "smashy",
+    },
+    {
+
+        "name": "dagger",
+        "strength": 30,
+        "speed": 3,
+        "level": 1,
+        "type": "stabby",
+    },
+    {
+
+        "name": "sheild",
+        "strength": 30,
+        "speed": 10,
+        "level": 1,
+        "type": "blocky",
     }];
 
     for(var i = 0; i<l.length; i++){
-        weaponList.push(new Weapon(l[i].name,l[i].strength,l[i].level,l[i].type));
+        weaponList.push(new Weapon(l[i].name,l[i].strength,l[i].speed,l[i].level,l[i].type));
     }
 }
 
+
+
+
 addWeapons();
-for(var i = 0; i<weaponList.length; i++){
-    console.log(weaponList[i].name);
-}
+
 
 
 player = new Player("billy",weaponList[0]);
-console.log(player.mainWeapon.name);
+
+
+player.addWeapon(weaponList[2]);
+
+console.log(player.secondary.name);
 
 
 createOptions(["red","blue","green","yellow"]);
