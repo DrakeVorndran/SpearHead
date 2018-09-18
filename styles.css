@@ -15,30 +15,33 @@ h1 {
 }
 /* flexboxes the stats, scene, and inv */
 .container {
-    display: flex;
-    flex-direction: row;
+    display: grid;
     width: 100%;
-    height: 75%;
-    margin: 0;
+    height: 100%;
     border: .5px solid black;
+    grid-gap: 0;
+    grid-template-areas:
+                "s c i"
+                "a a a";
+    grid-template-columns: 2fr 7fr 2fr;
+    grid-template-rows: 6fr 2fr;
 }
 
 /* sets the stats container on the left */
 #statBar {
+    grid-area: s;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    width: 15%;
-    height: 100%;
     border-bottom: 1px solid black;
     border-right: 1px solid black;
 }
 
 /* sets main scene and image */
 #sceneContainer {
-    width: 75%;
-    height: 100%;
-    display: flex;
+    grid-area: c;
+    display: block;
+    background-color: blue;
     flex-direction: column;
     background-image: url();
     background-size: 100% 100%;
@@ -57,11 +60,10 @@ h1 {
 
 /* sets the inv to the right side of the screen */
 #inv {
+    grid-area: i;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 15%;
-    height: 100%;
     overflow: auto;
     border-bottom: 1px solid black;
     border-left: 1px solid black;
@@ -69,8 +71,7 @@ h1 {
 
 /* creates the action bar at the bottom of the page */
 #actions {
-    width: 100%;
-    height: 25%;
+    grid-area: a;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -86,7 +87,6 @@ h1 {
     border-radius: 10px;
     margin: 15px;
     display: block;
-    box-shadow: 4px 4px gray;
 }
 
 /* sets proper alignment and size for name */
@@ -149,7 +149,6 @@ button:hover {
 
 #statBar > #healthContainer > #healthBar > span {
     font-weight: bold;
-    padding-left: 40px;
 }
 #statContent {
     display: flex;
@@ -161,7 +160,7 @@ button:hover {
 /* setting the health bar */
 #healthBar {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     margin-left: auto;
     margin-right: auto;
@@ -180,4 +179,8 @@ button:hover {
     height: 5%;
     border: 1px solid black;
     border-radius: 11px;
+}
+
+#textContainer > h1 {
+    padding: 20px 5px 5px 10px;
 }
